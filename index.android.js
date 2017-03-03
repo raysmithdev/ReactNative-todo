@@ -20,8 +20,6 @@ export default class Main extends Component {
   constructor() {
     super()
 
-    this.counter = 0;
-
     this.state = {
       todos: []
     }
@@ -31,8 +29,9 @@ export default class Main extends Component {
   }
 
   addToDo(text) {
-    
-  
+    console.log(this.refs.todo.value);
+    console.log(text);
+  console.log(this.refs.todo.value);
   
 
     this.setState({ todos:text });
@@ -58,8 +57,8 @@ deleteToDo(todoId) {
          {this.state.todos};
         </Text>
         <Form>
-        <Input placeholder="Get groceries" id="task"/>
-        <Button onPress={ this.addToDo}>
+        <Input   ref="todo" placeholder="Get groceries" id="task"/>
+        <Button onPress={ () => this.addToDo("okay") }>
           <Text>Click Me! </Text>
         </Button>
         </Form>
@@ -94,4 +93,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Main', () => Main);
+AppRegistry.registerComponent('sorry', () => Main);
